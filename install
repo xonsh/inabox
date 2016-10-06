@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+BASE=`pwd`
+
 sudo yum install -y git zlib-devel autoconf automake libtool python35 python35-pip
 sudo python3 -m pip install xonsh[ptk]
 
@@ -13,6 +15,6 @@ popd
 
 sudo useradd xonsh
 
-sudo cp pam.conf /etc/pam.d/shellinabox
-sudo cp upstart.conf /etc/init/shellinabox.conf
-sudo cp xonshrc ~xonsh/.xonshrc
+sudo cp $BASE/pam.conf /etc/pam.d/shellinabox
+sudo cp $BASE/upstart.conf /etc/init/shellinabox.conf
+sudo cp $BASE/xonshrc ~xonsh/.xonshrc
