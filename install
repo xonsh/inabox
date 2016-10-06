@@ -2,7 +2,7 @@
 
 sudo python3 -m pip install xonsh[ptk]
 
-sudo yum install git zlib-devel autoconf automake libtool python35 python35-pip
+sudo yum install -y git zlib-devel autoconf automake libtool python35 python35-pip
 git clone https://github.com/shellinabox/shellinabox.git
 cd shellinabox
 autoreconf -i

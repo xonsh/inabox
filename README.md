@@ -4,3 +4,7 @@ Just some files to set up a server (specifically, EC2) with [shellinabox](https:
 
 To run
 ------
+
+```
+curl https://raw.githubusercontent.com/xonsh/inabox/master/bootstrap | sh
+```
