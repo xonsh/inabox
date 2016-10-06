@@ -10,8 +10,8 @@ autoreconf -i
 make
 sudo make install
 
-useradd xonsh
+sudo useradd xonsh
 
-cp pam.conf /etc/pam.d/shellinabox
-cp upstart.conf /etc/init/shellinabox.conf
-cp xonshrc ~xonsh/.xonshrc
+sudo cp pam.conf /etc/pam.d/shellinabox
+sudo cp upstart.conf /etc/init/shellinabox.conf
+sudo cp xonshrc ~xonsh/.xonshrc
