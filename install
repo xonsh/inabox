@@ -3,7 +3,8 @@
 BASE=`pwd`
 
 # install xonsh
-yum install -y git zlib-devel autoconf automake libtool python35 python35-pip
+yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+yum install -y git zlib-devel autoconf automake libtool python35u python35u-pip
 python3.5 -m pip install xonsh[ptk]
 
 # install Let's Encrypt
