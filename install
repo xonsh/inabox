@@ -8,12 +8,12 @@ yum install -y git zlib-devel autoconf automake libtool python35u python35u-pip
 python3.5 -m pip install xonsh[ptk]
 
 # install Let's Encrypt
-git clone https://github.com/letsencrypt/letsencrypt
-pushd letsencrypt
-./letsencrypt-auto certonly --quiet --standalone \
-    -d hermit.astro73.com \
-    --agree-tos --email scopatz@gmail.com || { cat certbot.log; exit 1; }
-popd
+#git clone https://github.com/letsencrypt/letsencrypt
+#pushd letsencrypt
+#./letsencrypt-auto certonly --quiet --standalone \
+#    -d hermit.astro73.com \
+#    --agree-tos --email scopatz@gmail.com || { cat certbot.log; exit 1; }
+#popd
 
 # install shellinabox
 git clone https://github.com/shellinabox/shellinabox.git
