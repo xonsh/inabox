@@ -12,7 +12,7 @@ git clone https://github.com/letsencrypt/letsencrypt
 pushd letsencrypt
 ./letsencrypt-auto certonly --standalone \
     -d astro73.com -d hermit.astro73.com -d xon.sh \
-    --agree-dev-preview --agree-tos --email scopatz@gmail.com
+    --agree-tos --email scopatz@gmail.com || { cat certbot.log; exit 1; }
 popd
 
 # install shellinabox
