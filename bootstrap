@@ -2,5 +2,5 @@
 yum install -y git
 git clone https://github.com/xonsh/inabox.git
 cd inabox
-git checkeout -b ssl origin/ssl
+git checkout -b ssl origin/ssl
 exec ./install
