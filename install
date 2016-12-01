@@ -4,6 +4,7 @@ BASE=`pwd`
 
 # install xonsh
 yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+yum groupinstall 'Development Tools'
 yum install -y git zlib-devel autoconf automake libtool python35u python35u-pip
 python3.5 -m pip install xonsh[ptk]
 
