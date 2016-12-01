@@ -29,5 +29,4 @@ popd
 # Some user setup
 useradd xonsh
 cp $BASE/pam.conf /etc/pam.d/shellinabox
-cp $BASE/upstart.conf /etc/systemd/system/shellinabox.service
 cp $BASE/xonshrc ~xonsh/.xonshrc
