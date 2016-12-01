@@ -1,15 +1,15 @@
-#!/bin/sh -e
+#!/bin/sh -ex
 
 BASE=`pwd`
 
 # install xonsh
-sudo yum install -y git zlib-devel autoconf automake libtool python35 python35-pip
-sudo python3 -m pip install xonsh[ptk]
+yum install -y git zlib-devel autoconf automake libtool python35 python35-pip
+python3 -m pip install xonsh[ptk]
 
 # install Let's Encrypt
 git clone https://github.com/letsencrypt/letsencrypt
 pushd letsencrypt
-sudo -H ./letsencrypt-auto certonly --standalone \
+./letsencrypt-auto certonly --standalone \
     -d astro73.com -d hermit.astro73.com -d xon.sh \
     --agree-dev-preview --agree-tos --email scopatz@gmail.com
 popd
@@ -20,11 +20,11 @@ pushd shellinabox
 autoreconf -i
 ./configure
 make
-sudo make install
+make install
 popd
 
 # Some user setup
-sudo useradd xonsh
-sudo cp $BASE/pam.conf /etc/pam.d/shellinabox
-sudo cp $BASE/upstart.conf /etc/init/shellinabox.conf
-sudo cp $BASE/xonshrc ~xonsh/.xonshrc
+useradd xonsh
+cp $BASE/pam.conf /etc/pam.d/shellinabox
+cp $BASE/upstart.conf /etc/init/shellinabox.conf
+cp $BASE/xonshrc ~xonsh/.xonshrc
