@@ -31,3 +31,4 @@ useradd xonsh
 cp $BASE/pam.conf /etc/pam.d/shellinabox
 cp $BASE/systemd.conf /etc/systemd/system/shellinabox.service
 cp $BASE/xonshrc ~xonsh/.xonshrc
+systemctl enable shellinabox.service
