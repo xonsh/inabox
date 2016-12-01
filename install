@@ -10,7 +10,7 @@ python3.5 -m pip install xonsh[ptk]
 # install Let's Encrypt
 git clone https://github.com/letsencrypt/letsencrypt
 pushd letsencrypt
-./letsencrypt-auto certonly --standalone \
+./letsencrypt-auto certonly --quiet --standalone \
     -d astro73.com -d hermit.astro73.com -d xon.sh \
     --agree-tos --email scopatz@gmail.com || { cat certbot.log; exit 1; }
 popd
