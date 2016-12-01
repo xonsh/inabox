@@ -1,5 +1,5 @@
 #!/bin/sh -e
-sudo yum install -y git
+yum install -y git
 git clone https://github.com/xonsh/inabox.git
 cd inabox
 git checkeout -b ssl origin/ssl
