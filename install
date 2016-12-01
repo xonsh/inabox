@@ -26,9 +26,11 @@ make
 make install
 popd
 
+# For unused systemd setup
+#cp $BASE/systemd.conf /etc/systemd/system/shellinabox.service
+#systemctl enable shellinabox.service
+
 # Some user setup
 useradd xonsh
 cp $BASE/pam.conf /etc/pam.d/shellinabox
-cp $BASE/systemd.conf /etc/systemd/system/shellinabox.service
 cp $BASE/xonshrc ~xonsh/.xonshrc
-systemctl enable shellinabox.service

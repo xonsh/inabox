@@ -5,4 +5,5 @@ RUN cat bootstrap
 RUN /bin/sh bootstrap
 # launch systemd when run
 EXPOSE 80
-CMD ["/usr/sbin/init"]
+CMD ["/usr/local/bin/shellinaboxd", "-p", "80", "-t", \
+     "-s", "/:xonsh:xonsh:HOME:xonsh", "--linkify", "normal"]
