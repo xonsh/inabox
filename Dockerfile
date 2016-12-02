@@ -1,6 +1,6 @@
 FROM centos
 # build the service
-RUN curl https://raw.githubusercontent.com/xonsh/inabox/ssl/bootstrap > bootstrap
+RUN curl https://raw.githubusercontent.com/xonsh/inabox/master/bootstrap > bootstrap
 RUN cat bootstrap
 RUN /bin/sh bootstrap
 # launch systemd when run
