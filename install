@@ -1,20 +1,32 @@
-#!/bin/sh -e
+#!/bin/sh -ex
 
 BASE=`pwd`
 
-sudo yum install -y git zlib-devel autoconf automake libtool python35 python35-pip
-sudo python3 -m pip install xonsh[ptk]
+# install xonsh
+yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+yum groupinstall -y 'Development Tools'
+yum install -y git zlib-devel autoconf automake libtool \
+    python35u python35u-pip openssl-devel
+python3.5 -m pip install xonsh[ptk]
 
+# install Let's Encrypt
+#git clone https://github.com/letsencrypt/letsencrypt
+#pushd letsencrypt
+#./letsencrypt-auto certonly --quiet --standalone \
+#    -d hermit.astro73.com \
+#    --agree-tos --email scopatz@gmail.com || { cat certbot.log; exit 1; }
+#popd
+
+# install shellinabox
 git clone https://github.com/shellinabox/shellinabox.git
 pushd shellinabox
 autoreconf -i
 ./configure
 make
-sudo make install
+make install
 popd
 
-sudo useradd xonsh
-
-sudo cp $BASE/pam.conf /etc/pam.d/shellinabox
-sudo cp $BASE/upstart.conf /etc/init/shellinabox.conf
-sudo cp $BASE/xonshrc ~xonsh/.xonshrc
+# Some user setup
+useradd xonsh
+cp $BASE/pam.conf /etc/pam.d/shellinabox
+cp $BASE/xonshrc ~xonsh/.xonshrc
